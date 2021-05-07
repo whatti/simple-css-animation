@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta charset="utf-8">
+        <style>
+            /* -webkit-transform:rotate(90deg); */
+            .container{
+                position: relative;
+                width:100px; 
+                height:100px;
+            }
+            .circle { 
+                width:100px; 
+                height:100px;
+                position: relative;
+                animation:rotate 1s linear infinite;
+            } 
+            .circle:before {
+            content:""; 
+            display:block; 
+            width:80px;
+            height:40px; 
+            margin-top:10px; 
+            padding:10px; 
+            padding-bottom:0; 
+            z-index: -1;
+            box-sizing:content-box;
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+			border-top-left-radius:50px;
+			border-top-right-radius:50px;
+            border: 0;
+			background:
+            -webkit-gradient(
+				linear,
+				left top,
+				right top,
+				color-stop(0,#fff),
+				color-stop(1,#fff)
+			),
+            -webkit-gradient(
+				linear,
+				left top,
+				right top,
+				color-stop(0,#077df8),
+				color-stop(1,#74baff)
+			);
+			background-clip:content-box,padding-box;
+            
+            }
+            .circle:after {
+                content:""; 
+                display:block; 
+                width:80px;
+                height:40px; 
+                padding:10px; 
+                padding-top:0; 
+                z-index: -1;
+                box-sizing:content-box;
+                -webkit-box-sizing: content-box;
+                -moz-box-sizing: content-box;
+                border: 0;
+                border-bottom-left-radius:50px;
+                border-bottom-right-radius:50px;
+                background:-webkit-gradient(
+                    linear,
+                    left top,
+                    right top,
+                    color-stop(0,#fff),
+                    color-stop(1,#fff)
+                ),-webkit-gradient(
+                    linear,
+                    left top,
+                    right top,
+                    color-stop(0,#fff),
+                    color-stop(1,#74baff)
+                );
+                background-clip:content-box,padding-box;
+                
+            }
+            span{
+                text-align: center;
+                position: absolute;
+                top:50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                color: #74baff;
+                font-weight: 800;
+            }
+            @keyframes rotate{
+                0% {transform: rotate(0deg);}
+                50% {transform: rotate(-180deg);}
+                100% {transform: rotate(-360deg);}
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="circle"></div>
+            <span>加载中</span>
+        </div>
+    </body>
+</html>
