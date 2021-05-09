@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta charset="utf-8">
+        <style>
+            .container{
+                height: 92px;
+                width: 92px;
+                position: relative;
+            }
+            .right,.left{
+                position: absolute;
+                top:0;
+                overflow: hidden;
+                width:46px;
+                height:92px;
+            }
+            .right{
+                right: 0;
+            }
+            .left{
+                left: 0;
+            }
+
+
+            .under .rightcircle,.under .leftcircle{
+                border-top:5px red solid;
+            }
+            .under .rightcircle{
+                border-right:5px red solid;
+            }
+            .under .leftcircle{
+                border-left:5px red solid;
+            }
+            .up .rightcircle,.under .leftcircle{
+                border-top:5px #333 solid;
+            }
+            .up .rightcircle{
+                border-right:5px #333 solid;
+            }
+            .up .leftcircle{
+                border-left:5px #333 solid;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="left under">
+                <div class="circleProgress rightcircle"></div>
+            </div>
+            <div class="right under">
+                <div class="circleProgress leftcircle"></div>
+            </div>
+            <div class="left up"></div>
+            <div class="right up"></div>
+
+            <div class="left up_left_cover"></div>
+        </div>
+    </body>
+</html>
