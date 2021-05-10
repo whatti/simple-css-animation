@@ -2,80 +2,102 @@
     <head>
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <meta charset="utf-8">
-        <style>
+        <style type="text/less">
             .container{
                 height: 92px;
                 width: 92px;
                 position: relative;
-            }
-            .right,.left{
-                position: absolute;
-                top:0;
-                overflow: hidden;
-                width:46px;
-                height:92px;
-            }
-            .right{
-                right: 0;
-            }
-            .left{
-                left: 0;
-            }
 
-            .circleProgress{
-                position: absolute;
-                top:0;
-                overflow: hidden;
-                width: 82px;
-                height: 82px;
-                border-radius: 50%;
-                border:5px solid transparent; 
-            }
-            .rightcircle{
-                right:0;
-                -webkit-transform: rotate(-135deg);
-            }
-            .leftcircle{
-                left:0;
-                -webkit-transform: rotate(-35deg);
-            }
+                .under{
+                    z-index: 1;
+                    .rightcircle,.leftcircle{
+                        border-top:5px rgb(255, 228, 196) solid !important;
+                    }
+                    .rightcircle{
+                        border-right:5px rgb(255, 228, 196) solid !important;
+                    }
+                    .leftcircle{
+                        border-left:5px rgb(255, 228, 196) solid !important;
+                    }
 
-            .up{
-                z-index: 2;
-            }
-            .under{
-                z-index: 1;
-            }
+                    .rightcircle{
+                        right:0;
+                        -webkit-transform: rotate(21deg);
+                    }
+                    .leftcircle{
+                        left:0;
+                        -webkit-transform: rotate(-35deg);
+                    }
+                }
 
-            .under .rightcircle,.under .leftcircle{
-                border-top:5px #333 solid;
-            }
-            .under .rightcircle{
-                border-right:5px #333 solid;
-            }
-            .under .leftcircle{
-                border-left:5px #333 solid;
-            }
-            .up .rightcircle,.up .leftcircle{
-                border-top:5px yellow solid;
-            }
-            .up .rightcircle{
-                border-right:5px yellow solid;
-            }
-            .up .leftcircle{
-                border-left:5px yellow solid;
-            }
+                .up{
+                    z-index: 2;
+                    .rightcircle,.leftcircle{
+                        border-top:5px rgb(255, 140, 0) solid !important;
+                    }
+                    .rightcircle{
+                        border-right:5px rgb(255, 140, 0) solid !important;
+                    }
+                    .leftcircle{
+                        border-left:5px rgb(255, 140, 0) solid !important;
+                    }
 
-            .up_left_cover{
-                width: 46px;
-                height: 92px;
-                position: relative;
-            }
-            .up_left_cover .leftcircle{
-                top:0;
+                    .rightcircle{
+                        right:0;
+                        -webkit-transform: rotate(-135deg);
+                    }
+                    /*转动角度 -135 ~  21    156*/
+                    .leftcircle{
+                        left:0;
+                        -webkit-transform: rotate(-201deg);
+                    }
+                    /*转动角度 -201 ~ -45     156*/
+                }
+
+                .up_left_cover{
+                    width: 46px;
+                    height: 92px;
+                    position: relative;
+                    .leftcircle{
+                        width: 78px !important;
+                        height: 78px !important;
+                        top:0 !important;
+                        -webkit-transform:rotate(-200deg) !important;
+                        border:8px solid transparent !important;
+                        border-left:8px #fff solid !important;
+                        border-top:8px #fff solid !important;
+                        z-index:3 !important;
+                    }
+                }
                 
+                .right,.left{
+                    position: absolute;
+                    top:0;
+                    overflow: hidden;
+                    width:46px;
+                    height:92px;
+                    .circleProgress{
+                        position: absolute;
+                        top:0;
+                        overflow: hidden;
+                        width: 82px;
+                        height: 82px;
+                        border-radius: 50%;
+                        border:5px solid transparent; 
+                    }
+                    
+                }
+
+                .right{
+                    right: 0;
+                }
+                .left{
+                    left: 0;
+                }
             }
         </style>
+        
+        <script src="../style/less.js"></script>
     </head>
     <body>
         <div class="container">
@@ -98,4 +120,12 @@
             </div>
         </div>
     </body>
+    <script>
+        (function(){
+            let rightNode = document.querySelector('.up .rightcircle');
+            let leftNodes = document.querySelector('.up .leftcircle');
+            rightNode.setAttribute('transform', 'rotate(-35deg)');
+        })();
+
+    </script>
 </html>
