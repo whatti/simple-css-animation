@@ -22,40 +22,80 @@
                 left: 0;
             }
 
+            .circleProgress{
+                position: absolute;
+                top:0;
+                overflow: hidden;
+                width: 82px;
+                height: 82px;
+                border-radius: 50%;
+                border:5px solid transparent; 
+            }
+            .rightcircle{
+                right:0;
+                -webkit-transform: rotate(-135deg);
+            }
+            .leftcircle{
+                left:0;
+                -webkit-transform: rotate(-35deg);
+            }
+
+            .up{
+                z-index: 2;
+            }
+            .under{
+                z-index: 1;
+            }
 
             .under .rightcircle,.under .leftcircle{
-                border-top:5px red solid;
-            }
-            .under .rightcircle{
-                border-right:5px red solid;
-            }
-            .under .leftcircle{
-                border-left:5px red solid;
-            }
-            .up .rightcircle,.under .leftcircle{
                 border-top:5px #333 solid;
             }
-            .up .rightcircle{
+            .under .rightcircle{
                 border-right:5px #333 solid;
             }
-            .up .leftcircle{
+            .under .leftcircle{
                 border-left:5px #333 solid;
             }
+            .up .rightcircle,.up .leftcircle{
+                border-top:5px yellow solid;
+            }
+            .up .rightcircle{
+                border-right:5px yellow solid;
+            }
+            .up .leftcircle{
+                border-left:5px yellow solid;
+            }
 
+            .up_left_cover{
+                width: 46px;
+                height: 92px;
+                position: relative;
+            }
+            .up_left_cover .leftcircle{
+                top:0;
+                
+            }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="left under">
-                <div class="circleProgress rightcircle"></div>
-            </div>
-            <div class="right under">
                 <div class="circleProgress leftcircle"></div>
             </div>
-            <div class="left up"></div>
-            <div class="right up"></div>
+            <div class="right under">
+                <div class="circleProgress rightcircle"></div>
+            </div>
+            <div class="left up">
 
-            <div class="left up_left_cover"></div>
+                <div class="circleProgress leftcircle"></div>
+            </div>
+            <div class="right up">
+                <div class="circleProgress rightcircle"></div>
+            </div>
+
+            <div class="left up_left_cover">
+                <div class="circleProgress leftcircle"></div>
+            </div>
         </div>
     </body>
 </html>
