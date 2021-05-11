@@ -34,20 +34,20 @@
                 .up{
                     z-index: 2;
                     .rightcircle,.leftcircle{
-                        border-top:5px rgb(255, 140, 0) solid !important;
-                        /* transition: all 3s linear; */
+                        border-top:5px rgb(255, 140, 0) solid !important; 
                     }
                     .rightcircle{
                         border-right:5px rgb(255, 140, 0) solid !important;
+                        transition: all 3s linear 3s;
                     }
                     .leftcircle{
                         border-left:5px rgb(255, 140, 0) solid !important;
+                        transition: all 3s linear;
                     }
 
                     .rightcircle{
                         right:0;
                         -webkit-transform: rotate(-135deg);
-                        
                     }
                     /*转动角度 -135 ~  21    156*/
                     .leftcircle{
@@ -55,8 +55,6 @@
                         -webkit-transform: rotate(-201deg);
                     }
                     /*转动角度 -201 ~ -45     156*/
-                    
-                    animation: progress 10s linear 0 3;
                 }
 
                 .up_left_cover{
@@ -101,33 +99,9 @@
                 }
             }
 
-            .frotate(@per) when (@per > 50){
-                .rightcircle{
-                    transform:rotate(-135deg + 156deg * ((@per - 50)*2/100) );
-                }
-                .leftcircle{
-                    transform:rotate(-45deg);
-                }
-                
-            }
-            .frotate(@per) when (@per <= 50){
-                .leftcircle{
-                    transform:rotate(-45deg + 156deg * (@per*2/100) );
-                }
-                .rightcircle{
-                    transform:rotate(-135deg)
-                }
-            }
-            .right-rotate(@per) when (@per > 50){
-                    transform:rotate(-135deg + 156deg * (@per*2/100) ) !important;
-            }
-            .right-rotate(@per) when (@per <= 50){
-                    transform:rotate(-135deg) !important;
-            }
-
             @keyframes progress{
-                from {.rightcircle{.right-rotate(0)}}
-                to {.rightcircle{.right-rotate(100)}}
+                0% {-webkit-transform:rotate(-135deg) !important}
+                100% {-webkit-transform:rotate(21deg) !important}
             }
         </style>
         
@@ -155,14 +129,14 @@
         </div>
     </body>
     <script>
-        // (function(){
-        //     let rightNode = document.querySelector('.up .rightcircle');
-        //     let leftNodes = document.querySelector('.up .leftcircle');
-        //     setTimeout(()=>{
-        //         leftNodes.style.transform = 'rotate(-20deg)';
-        //     },3000);
-            
-        // })();
+        (function(){
+            let rightNode = document.querySelector('.up .rightcircle');
+            let leftNode = document.querySelector('.up .leftcircle');
+            setTimeout(()=>{
+                leftNode.style.transform = 'rotate(-45deg)';
+                rightNode.style.transform = 'rotate(21deg)';
+            },1000);
+        })();
 
     </script>
 </html>
